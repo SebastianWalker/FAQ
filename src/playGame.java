@@ -2,19 +2,28 @@ import java.util.*;
 
 public class playGame {
     
+        
+    
+    public static void run(player player){
         Frage nächsteFrage = new Frage();
         Integer intAntwort;
         Fragen meineFragen = new Fragen();
-    
-    
-        public void run(player player){
-            System.out.println("Bitte warte, während ich die Fragen vorbereite...");
-            meineFragen.FragenEinlesen();
-            helper.pause(1000); // just wait 
+        
+        System.out.println("Bitte warte, während ich die Fragen vorbereite...");
+        meineFragen.FragenEinlesen();
+         helper.pause(1000); // just wait 
 
         boolean keepGoing = true;
         while(keepGoing){
-            System.out.println("Du hast bereits " + player.gewinn + " Nüsse erspielt!");
+            System.out.print("\033[H\033[2J");
+            if (player.zocker){
+                System.out.println("Du hast bereits " + player.gewinn + " Nüsse erspielt!");
+            }else{
+                System.out.print("Du hast bereits " + player.gewinn + " Nüsse erspielt! ");
+                if (player.level >=2){System.out.print("Davon sind sogar schon 300 Nüsse save!");}
+            }
+            
+
             nächsteFrage = meineFragen.getRandomFrage2Level(player.level);
             System.out.println(nächsteFrage.Frage);
 
@@ -29,6 +38,7 @@ public class playGame {
 
             if(intAntwort==5050){ // Joker einsetzen
                 player.joker5050used=true; // Joker darf nicht mehr genutzt werden
+                System.out.print("\033[H\033[2J");
                 System.out.println(nächsteFrage.Frage); // Frage erneut anzeigen
 
                 // eine Frage ist richtig, damit bleiben 3 übrig von denen zwei weg müssen.. also suchen wir zufällig eine aus und behalten die
@@ -68,11 +78,15 @@ public class playGame {
 
                 }
                 
-                pause(500);
+                helper.pause(500);
                 System.out.print("\033[H\033[2J");
                 
             }else{
-                System.out.println("Leider Falsch! \n Du hast gezockt.. und nichts gewonnen... \n Viel Glück beim nächsten Mal!");
+                
+                if (player.zocker){player.gewinn = 0;}
+                if (player.level >= 2 && !player.zocker) {player.gewinn=300;}
+                
+                System.out.println("Leider Falsch! Richtg wäre '" + nächsteFrage.richtigeAntwort + "' gewesen...\nDu hast es versucht.. und "+ player.gewinn +" gewonnen... \nViel Glück beim nächsten Mal!");
                 keepGoing=false;
             }
         }
