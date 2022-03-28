@@ -3,6 +3,7 @@ public class player {
     boolean zocker;
     int gewinn;
     int level;
+    boolean joker5050used;
     private int _level;
 
     private Integer[] levels = {100, 200, 300, 500, 1000};
@@ -11,6 +12,7 @@ public class player {
         gewinn = 0;
         level = levels[0];
         _level = 0;
+        joker5050used=false;
     }
 
     public Integer getLevel(){
