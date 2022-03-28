@@ -6,11 +6,13 @@ public class quiz {
         //Integer intAntwort;
         //Fragen meineFragen = new Fragen();
 
+        System.out.print("\033[H\033[2J");
         System.out.println("Hallo Player!");
         System.out.println("Wie ist dein Name?");
 
         player.name = System.console().readLine();
- 
+
+        System.out.print("\033[H\033[2J");
         System.out.print("Hi ");
         System.out.println(player.name);
 
@@ -38,6 +40,7 @@ public class quiz {
 
         System.out.println("\nWillst du noch eine Runde dein Glück versuchen? \n[j]: klar doch! her mit den Nüssen! \n[n]: ich hab mich schon genug blamiert..");
         goAgain = System.console().readLine().equals("j") ? true : false;
+        player.reset();
         System.out.print("\033[H\033[2J");
 
     }

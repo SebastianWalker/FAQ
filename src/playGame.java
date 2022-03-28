@@ -2,8 +2,6 @@ import java.util.*;
 
 public class playGame {
     
-        
-    
     public static void run(player player){
         Frage nächsteFrage = new Frage();
         Integer intAntwort;
@@ -19,8 +17,8 @@ public class playGame {
             if (player.zocker){
                 System.out.println("Du hast bereits " + player.gewinn + " Nüsse erspielt!");
             }else{
-                System.out.print("Du hast bereits " + player.gewinn + " Nüsse erspielt! ");
-                if (player.level >=2){System.out.print("Davon sind sogar schon 300 Nüsse save!");}
+                System.out.println("Du hast bereits " + player.gewinn + " Nüsse erspielt! ");
+                if (player.gewinn >=300){System.out.println("Davon sind sogar schon 300 Nüsse save!");}
             }
             
 
@@ -72,15 +70,11 @@ public class playGame {
                     System.out.print("\033[H\033[2J");
                     System.out.println("Du hast bis zum Ende durchgehalten!");
                     System.out.println("Du hast " + player.gewinn + " Nüsse erspielt!");
-                    System.out.println("Drücke eine Taste zum Beenden...");
-                    System.console().readLine();
                     keepGoing=false;
 
                 }
                 
-                helper.pause(500);
-                System.out.print("\033[H\033[2J");
-                
+               
             }else{
                 
                 if (player.zocker){player.gewinn = 0;}

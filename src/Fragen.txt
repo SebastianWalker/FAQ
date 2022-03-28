@@ -1,11 +1,21 @@
 Level;Frage;Antwort;Falsch1;Flasch2;Falsch3
-100;Wie gehts?;Gut;bla;no;5
-100;Was läuft?;nix;4;haskifg;sfff
-200;Wie heisst du?;HAL;4;sd;s44
+100;Was bedeuten die berühmten Worte von Julius Caesar "Alea iacta est"?;Der Würfel ist gefallen!;Die Entscheidung ist getroffen.;Das ist mein Urteil.;So soll es sein.
+100;Welches Sternzeichen hat jemand, der am 15. Mai geboren wurde?;Stier;Zwilling;Waage;Fuchs
+100;Was ist 2+1;3;2;1;4
+100;Welche Farbe hat der Himmel?;blau;rot;grün;7
+200;Ein Kubikmeter umfasst wie viel Liter?;1000 Liter; 25 Liter; 10000 Liter; 1 Liter
 200;Wer ist HAL?;eine KI;ein Hase;deine Mudder;ich
-300;Was ist 4+4?;8;4;geh mir weg mit Mathe; Mond
-300;Welche Farbe hat der Himmel?;blau;rot;grün;7
-500;Wann war 2000?;im Jahr 2000;schon was her;da gabs mich noch nicht; gestern
-500;Kannst du einen Handstand?;nee;ja;vielleicht;nur mit Hilfe
-1000;Willst du die Million?;nö;immer;nur wenns umsonst ist;frag mich morgen noch mal
-1000;noch eine Runde?;niemals;jederzeit;5;mit Opa
+200;Welche Figur aus der Sesamstraße besitzt ein blaues Fell?;das Krümelmonster;Elmo;Kermit;Ernie
+200;Wenn man eins von zwei Löchern im Reifen flickt, dann wird er ...?;dichter;maler;bildhauer;sänger
+300;Was ist ein Falchion?;Ein Schwert;Ein Tier;Ein Gericht; Ein Kleidungsstück
+300;Was bedeutet der Name der italienischen Nachspeise "Tiramisu" wörtlich?;zieh mich hoch;süß und köstlich;das macht dick;Leckermäulchen
+300;Was trägt man an den Füßen?;Espradilles;Tortillas;Jalapeños;Enchiladas
+300;Wofür gibt es einen Oscar?;Bester Schnitt;Toller Chirurg;Fabelhafte OP;Exquisites Skalpell
+500;Was ist „der Frau“ und „der Tochter“?;Genitiv;Höflichkeitsform;Konjunktiv;Transsexualität
+500;Wann war 2000?;im Jahr 2000;schon was her;da gabs mich noch nicht;gestern
+500;Scotty, der Ingenieur des Raumschiffs Enterprise, war bei den „Ausflügen“ meist nicht dabei, weil er ...?;beamte;angestellte;selbstständige;vorgesetzte
+500;Wie hieß der erste Hund im Weltall?;Laika;Jens;Lousie;Dick
+1000;Wer erfand die Jeans?;Levi Strauss;Tom Wrangler;Peter Diesel;Tim Mustang
+1000;Mit was beschäftigt sich ein Ornithologe?;Mit Vögeln; mit Insekten; Mit toten Tieren; mit vögeln 
+1000;Welcher Kinderbiuchheld entpuppt sich als Nachfahre von einem der Heiligen Drei Könige?;Jim Knopf;Harry Potter;Peter Pan;Pippi Langstrumpf
+1000;Was kommt in Ostasien häufig auf den Tisch?;Soja;Sonicht;Soschoneher;Sovielleicht

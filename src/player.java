@@ -14,6 +14,12 @@ public class player {
         _level = 0;
         joker5050used=false;
     }
+    public void reset(){
+        gewinn = 0;
+        level = levels[0];
+        _level = 0;
+        joker5050used=false;
+    }
 
     public Integer getLevel(){
         return level;
