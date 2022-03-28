@@ -1,61 +1,16 @@
-import java.io.*;  
 import java.util.*;  
 
 
 public class quiz {
     
-    public static void pause(int ms) {
-        try {
-            Thread.sleep(ms);
-        } catch (InterruptedException e) {
-            System.err.format("IOException: %s%n", e);
-        }
-    }
-
-    static void FrageEinlesen(){
-
-        int i = 0; // counter für Daten .. hauptsächlich um die Headerzeile zu überspringen
-
-        try  
-            {  
-                File file=new File("src/Fragen.txt");    //creates a new file instance  
-                FileReader fr=new FileReader(file);   //reads the file  
-                BufferedReader br=new BufferedReader(fr);  //creates a buffering character input stream  
-
-                String line;  
-                String[] splitLine;
-            
-                while((line=br.readLine())!=null){  
-                    Frage eineFrage = new Frage();
-                    if (i>0){
-                        splitLine = line.split(";");
-                        eineFrage.level = Integer.parseInt(splitLine[0]);
-                        eineFrage.Frage = splitLine[1];
-                        eineFrage.richtigeAntwort = splitLine[2];
-                        eineFrage.listAntworten.add(splitLine[2]);
-                        eineFrage.listAntworten.add(splitLine[3]);
-                        eineFrage.listAntworten.add(splitLine[4]);
-                        eineFrage.listAntworten.add(splitLine[5]);
-                        meineFragen.add(eineFrage);
-                    }
-                    i++;
-                }  
-                fr.close();    //closes the stream and release the resources  
-            }  
-                catch(IOException e)  
-            {  
-             e.printStackTrace();  
-            }   
-    }
-
-  
-    static Fragen meineFragen = new Fragen();
+    
 
     public static void main(String[] args) {
 
         player player = new player();
         Frage nächsteFrage = new Frage();
         Integer intAntwort;
+        Fragen meineFragen = new Fragen();
 
         System.out.println("Hallo Player!");
         System.out.println("Wie ist dein Name?");
@@ -66,8 +21,9 @@ public class quiz {
         System.out.println(player.name);
         System.out.println("Bitte warte, während ich die Fragen vorbereite...");
 
-        FrageEinlesen();
-        pause(1000); // just wait 
+        meineFragen.FragenEinlesen();
+        
+        helper.pause(1000); // just wait 
 
         System.out.println("Welche Variante willst du spielen?");
         System.out.println("Echte Zocker schreiben 'yeah'.. alles andere ist langweilig!");
@@ -90,8 +46,37 @@ public class quiz {
                 for (int i = 0; i<nächsteFrage.listAntworten.size(); i++){  
                     System.out.println("Antwort [" + i + "]:" + nächsteFrage.listAntworten.get(i));
                 }
+                if (!player.joker5050used){
+                    System.out.println("Drücke 5050 um deinen Joker einzusetzen!");
+                }
                 intAntwort = Integer.parseInt(System.console().readLine());
     
+                if(intAntwort==5050){ // Joker einsetzen
+                    player.joker5050used=true; // Joker darf nicht mehr genutzt werden
+                    System.out.println(nächsteFrage.Frage); // Frage erneut anzeigen
+
+                    // eine Frage ist richtig, damit bleiben 3 übrig von denen zwei weg müssen.. also suchen wir zufällig eine aus und behalten die
+                    List<String> möglicheAntworten = new ArrayList<String>();
+                    for (String f : nächsteFrage.listAntworten){
+                        if (f != nächsteFrage.richtigeAntwort){
+                            möglicheAntworten.add(f);
+                        }
+                    }
+                    Random rand = new Random();
+                    int int_random = rand.nextInt(3);
+
+                    for (int i = 0; i<nächsteFrage.listAntworten.size(); i++){  
+                        String f = nächsteFrage.listAntworten.get(i);
+                        if (f==nächsteFrage.richtigeAntwort || f==möglicheAntworten.get(int_random)){
+                            System.out.println("Antwort [" + i + "]:" + f);
+                        }else{
+                            System.out.println("Antwort [" + i + "]: ...");
+                        }
+                    }
+                    intAntwort = Integer.parseInt(System.console().readLine());
+                }
+
+
                 if (nächsteFrage.listAntworten.get(intAntwort) == nächsteFrage.richtigeAntwort){
                     System.out.println("Stimmt!");
                     player.gewinn = player.getLevel();
@@ -107,11 +92,11 @@ public class quiz {
 
                     }
                     
-                    pause(500);
+                    helper.pause(500);
                     System.out.print("\033[H\033[2J");
                     
                 }else{
-                    System.out.println("Leider Falsch! -- Viel Glück beim nächsten Mal!");
+                    System.out.println("Leider Falsch! \n Du hast gezockt.. und nichts gewonnen... \n Viel Glück beim nächsten Mal!");
                     keepGoing=false;
                 }
             }
