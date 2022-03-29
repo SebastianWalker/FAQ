@@ -8,6 +8,7 @@ public class input {
     private static String[] erlaubteStrings = {"j", "n"};
     private static int[] erlaubteInteger = {0,1,2,3,5050};
 
+    // not used..
     public static String Menue(){
         boolean notPassed = true;
 

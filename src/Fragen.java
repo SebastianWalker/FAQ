@@ -3,38 +3,37 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
+// Klasse enthält mehrere Fragen und Methoden um die Fragen abzurufen
 public class Fragen {
     
-    static List<Frage> _Fragen = new ArrayList<Frage>();
+    static List<Frage> FragenListe = new ArrayList<Frage>();
 
     public Frage getRandomFrage2Level(int level){
         List<Frage> möglicheFragen = new ArrayList<Frage>(); // temp. Liste mit allen Fragen die zum Level passen
-        for (Frage f : _Fragen){ // foe each Frage f in _Fragen...
+        for (Frage f : FragenListe){ // for each Frage f in _Fragen...
             if (f.level == level){
                 möglicheFragen.add(f);
             }
         }
         // jetzt eine random raussuchen
-        Random rand = new Random();
-        rand.setSeed(System.currentTimeMillis());
-        int int_random = rand.nextInt(möglicheFragen.size());
+        Collections.shuffle(möglicheFragen, new Random(System.currentTimeMillis())); // double random :D
+        return möglicheFragen.get(0);
 
-        return möglicheFragen.get(int_random);
     }
 
     public void add(Frage Frage){
-        _Fragen.add(Frage);
+        FragenListe.add(Frage);
     }
 
     public void FragenEinlesen(){
 
         int i = 0; // counter für Daten .. hauptsächlich um die Headerzeile zu überspringen
 
-        try  
-            {  
+        try{  
                 File file=new File("src/Fragen.txt");    //creates a new file instance  
                 FileReader fr=new FileReader(file);   //reads the file  
                 BufferedReader br=new BufferedReader(fr);  //creates a buffering character input stream  
@@ -49,20 +48,17 @@ public class Fragen {
                         eineFrage.level = Integer.parseInt(splitLine[0]);
                         eineFrage.Frage = splitLine[1];
                         eineFrage.richtigeAntwort = splitLine[2];
-                        eineFrage.listAntworten.add(splitLine[2]);
-                        eineFrage.listAntworten.add(splitLine[3]);
-                        eineFrage.listAntworten.add(splitLine[4]);
-                        eineFrage.listAntworten.add(splitLine[5]);
-                        _Fragen.add(eineFrage);
+                        for (int k = 2; k<splitLine.length; k++){
+                            eineFrage.listAntworten.add(splitLine[k]); // egal wie viele Antwortmöglichkeiten in der Textdatei stehen...
+                        }
+                        FragenListe.add(eineFrage);
                     }
                     i++;
                 }  
                 fr.close();    //closes the stream and release the resources  
-            }  
-                catch(IOException e)  
-            {  
+        }catch(IOException e){  
              e.printStackTrace();  
-            }   
+        }   
     }
 
 }

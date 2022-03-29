@@ -16,7 +16,7 @@ Level;Frage;Antwort;Falsch1;Flasch2;Falsch3
 500;Scotty, der Ingenieur des Raumschiffs Enterprise, war bei den „Ausflügen“ meist nicht dabei, weil er ...?;beamte;angestellte;selbstständige;vorgesetzte
 500;Wie hieß der erste Hund im Weltall?;Laika;Jens;Lousie;Dick
 1000;Wer erfand die Jeans?;Levi Strauss;Tom Wrangler;Peter Diesel;Tim Mustang
-1000;Mit was beschäftigt sich ein Ornithologe?;Mit Vögeln; mit Insekten; Mit toten Tieren; mit vögeln 
+1000;Mit was beschäftigt sich ein Ornithologe?;mit Vögeln;mit Insekten;mit toten Tieren;mit vögeln 
 1000;Welcher Kinderbuchheld entpuppt sich als Nachfahre von einem der Heiligen Drei Könige?;Jim Knopf;Harry Potter;Peter Pan;Pippi Langstrumpf
 1000;Was kommt in Ostasien häufig auf den Tisch?;Soja;Sonicht;Soschoneher;Sovielleicht
 1000;Was ist die richtige Antwort?;42;33;77;5

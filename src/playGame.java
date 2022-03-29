@@ -47,9 +47,8 @@ public class playGame {
                         möglicheAntworten.add(f);
                     }
                 }
-                Random rand = new Random();
-                rand.setSeed(System.currentTimeMillis());
-                int int_random = rand.nextInt(3);
+                Random rand = new Random(System.currentTimeMillis());
+                int int_random = rand.nextInt(nächsteFrage.listAntworten.size());
 
                 for (int i = 0; i<nächsteFrage.listAntworten.size(); i++){  
                     String f = nächsteFrage.listAntworten.get(i);
