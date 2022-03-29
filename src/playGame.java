@@ -48,6 +48,7 @@ public class playGame {
                     }
                 }
                 Random rand = new Random();
+                rand.setSeed(System.currentTimeMillis());
                 int int_random = rand.nextInt(3);
 
                 for (int i = 0; i<nächsteFrage.listAntworten.size(); i++){  

@@ -19,6 +19,7 @@ public class Fragen {
         }
         // jetzt eine random raussuchen
         Random rand = new Random();
+        rand.setSeed(System.currentTimeMillis());
         int int_random = rand.nextInt(möglicheFragen.size());
 
         return möglicheFragen.get(int_random);

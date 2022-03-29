@@ -7,7 +7,7 @@ Level;Frage;Antwort;Falsch1;Flasch2;Falsch3
 200;Wer ist HAL?;eine KI;ein Hase;deine Mudder;ich
 200;Welche Figur aus der Sesamstraße besitzt ein blaues Fell?;das Krümelmonster;Elmo;Kermit;Ernie
 200;Wenn man eins von zwei Löchern im Reifen flickt, dann wird er ...?;dichter;maler;bildhauer;sänger
-300;Was ist ein Falchion?;Ein Schwert;Ein Tier;Ein Gericht; Ein Kleidungsstück
+300;Was ist ein Falchion?;Ein Schwert;Ein Tier;Ein Gericht;Ein Kleidungsstück
 300;Was bedeutet der Name der italienischen Nachspeise "Tiramisu" wörtlich?;zieh mich hoch;süß und köstlich;das macht dick;Leckermäulchen
 300;Was trägt man an den Füßen?;Espradilles;Tortillas;Jalapeños;Enchiladas
 300;Wofür gibt es einen Oscar?;Bester Schnitt;Toller Chirurg;Fabelhafte OP;Exquisites Skalpell
@@ -17,5 +17,6 @@ Level;Frage;Antwort;Falsch1;Flasch2;Falsch3
 500;Wie hieß der erste Hund im Weltall?;Laika;Jens;Lousie;Dick
 1000;Wer erfand die Jeans?;Levi Strauss;Tom Wrangler;Peter Diesel;Tim Mustang
 1000;Mit was beschäftigt sich ein Ornithologe?;Mit Vögeln; mit Insekten; Mit toten Tieren; mit vögeln 
-1000;Welcher Kinderbiuchheld entpuppt sich als Nachfahre von einem der Heiligen Drei Könige?;Jim Knopf;Harry Potter;Peter Pan;Pippi Langstrumpf
+1000;Welcher Kinderbuchheld entpuppt sich als Nachfahre von einem der Heiligen Drei Könige?;Jim Knopf;Harry Potter;Peter Pan;Pippi Langstrumpf
 1000;Was kommt in Ostasien häufig auf den Tisch?;Soja;Sonicht;Soschoneher;Sovielleicht
+1000;Was ist die richtige Antwort?;42;33;77;5
