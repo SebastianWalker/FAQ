@@ -9,7 +9,7 @@ public class playGame {
         
         System.out.println("Bitte warte, während ich die Fragen vorbereite...");
         meineFragen.FragenEinlesen();
-         helper.pause(1000); // just wait 
+        helper.pause(1000); // just wait 
 
         boolean keepGoing = true;
         while(keepGoing){
@@ -88,7 +88,7 @@ public class playGame {
             }else{
                 
                 if (player.zocker){player.gewinn = 0;}
-                if (player.level >= 2 && !player.zocker) {player.gewinn=300;}
+                if (player.level > 300 && !player.zocker) {player.gewinn=300;}
                 
                 System.out.println("Leider Falsch! Richtg wäre '" + nächsteFrage.richtigeAntwort + "' gewesen...\nDu hast es versucht.. und "+ player.gewinn +" gewonnen... \nViel Glück beim nächsten Mal!");
                 keepGoing=false;

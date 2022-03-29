@@ -3,7 +3,7 @@ Level;Frage;Antwort;Falsch1;Flasch2;Falsch3
 100;Welches Sternzeichen hat jemand, der am 15. Mai geboren wurde?;Stier;Zwilling;Waage;Fuchs
 100;Was ist 2+1;3;2;1;4
 100;Welche Farbe hat der Himmel?;blau;rot;grün;7
-200;Ein Kubikmeter umfasst wie viel Liter?;1000 Liter; 25 Liter; 10000 Liter; 1 Liter
+200;Ein Kubikmeter umfasst wie viel Liter?;1000 Liter;25 Liter;10000 Liter;1 Liter
 200;Wer ist HAL?;eine KI;ein Hase;deine Mudder;ich
 200;Welche Figur aus der Sesamstraße besitzt ein blaues Fell?;das Krümelmonster;Elmo;Kermit;Ernie
 200;Wenn man eins von zwei Löchern im Reifen flickt, dann wird er ...?;dichter;maler;bildhauer;sänger
