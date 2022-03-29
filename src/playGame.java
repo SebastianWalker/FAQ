@@ -27,14 +27,15 @@ public class playGame {
 
             Collections.shuffle(nächsteFrage.listAntworten);
             for (int i = 0; i<nächsteFrage.listAntworten.size(); i++){  
-                System.out.println("Antwort [" + i + "]:" + nächsteFrage.listAntworten.get(i));
+                System.out.println("[" + i + "]:" + nächsteFrage.listAntworten.get(i));
             }
             if (!player.joker5050used){
                 System.out.println("Drücke 5050 um deinen Joker einzusetzen!");
             }
-            intAntwort = Integer.parseInt(System.console().readLine());
-
-            if(intAntwort==5050){ // Joker einsetzen
+            
+             intAntwort = input.Antwort();   
+        
+            if(intAntwort==5050 && !player.joker5050used){ // Joker einsetzen
                 player.joker5050used=true; // Joker darf nicht mehr genutzt werden
                 System.out.print("\033[H\033[2J");
                 System.out.println(nächsteFrage.Frage); // Frage erneut anzeigen
@@ -52,14 +53,22 @@ public class playGame {
                 for (int i = 0; i<nächsteFrage.listAntworten.size(); i++){  
                     String f = nächsteFrage.listAntworten.get(i);
                     if (f==nächsteFrage.richtigeAntwort || f==möglicheAntworten.get(int_random)){
-                        System.out.println("Antwort [" + i + "]:" + f);
+                        System.out.println("[" + i + "]:" + f);
                     }else{
-                        System.out.println("Antwort [" + i + "]: ...");
+                        System.out.println("[" + i + "]: ...");
                     }
                 }
-                intAntwort = Integer.parseInt(System.console().readLine());
+                intAntwort = input.Antwort();
             }
 
+            // wenn Joker das zweite mal eingesetz wird.. muss man das verhindern, sonst sucht er die Antwort mit index5050 im listAntworten
+            if (intAntwort==5050 && player.joker5050used){
+                while (intAntwort==5050){
+                    System.out.println("Der Jocker ist schon aufgebraucht...");
+                    intAntwort = input.Antwort();
+                }
+                
+            }
 
             if (nächsteFrage.listAntworten.get(intAntwort) == nächsteFrage.richtigeAntwort){
                 System.out.println("Stimmt!");
